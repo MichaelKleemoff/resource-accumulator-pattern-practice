@@ -20,7 +20,15 @@ function addAllNumbers(values) {
  * @param {number[]} values - An array of whole numbers.
  * @returns {number[]} - An array of whole numbers.
  */
-function doubleAllNumbers(values) {}
+function doubleAllNumbers(values) {
+  let multByTwo = [];
+
+  for (let i = 0; i < values.length; i++) {
+    multByTwo.push(values[i] * 2);
+  }
+
+  return multByTwo;
+}
 
 /**
  * Return an array of only the even numbers in the inputted array.
@@ -28,7 +36,17 @@ function doubleAllNumbers(values) {}
  * @param {number[]} values - An array of whole numbers.
  * @returns {number[]} - An array of only even numbers.
  */
-function getAllEvenNumbers(values) {}
+function getAllEvenNumbers(values) {
+  let evenNums = [];
+
+  for (let even of values) {
+    if (even % 2 === 0) {
+      evenNums.push(even);
+    }
+  }
+
+  return evenNums;
+}
 
 /**
  * Return the number given if it is in the array. Otherwise, return `null`.
