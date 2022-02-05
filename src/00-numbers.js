@@ -4,7 +4,15 @@
  * @param {number[]} values - An array of whole numbers.
  * @returns {number} - The sum of all numbers in the array.
  */
-function addAllNumbers(values) {}
+function addAllNumbers(values) {
+  let total = 0;
+
+  for (let i = 0; i < values.length; i++) {
+    total += values[i];
+  }
+
+  return total;
+}
 
 /**
  * Multiply each number in the array by 2 and return a new array with the doubled values.
