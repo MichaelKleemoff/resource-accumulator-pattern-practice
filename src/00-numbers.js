@@ -55,7 +55,16 @@ function getAllEvenNumbers(values) {
  * @param {number} val - A specific value to find.
  * @returns {number|null} - The found number or `null`.
  */
-function findNumberByValue(values, val) {}
+function findNumberByValue(values, val) {
+  
+  for (let i = 0; i < values.length; i++) {
+    if (values.includes(val)) {
+      return val;
+    }
+  }
+
+  return null;
+}
 
 /**
  * Return `true` if all numbers in the array are negative. Otherwise, return `false`. Ignore `0` in determining whether or not an array includes all negative numbers.
@@ -63,7 +72,19 @@ function findNumberByValue(values, val) {}
  * @param {number[]} values - An array of whole numbers.
  * @returns {boolean} - Whether or not all numbers in the array are negative.
  */
-function allNumbersAreNegative(values) {}
+function allNumbersAreNegative(values) {
+  
+  for (let value of values) {
+    if (value < 0 || value === 0) {
+      return true;
+    } 
+    if (value > 0 || value === 0) {
+      return false;
+    }
+    
+  } 
+  return false;
+}
 
 /**
  * Return the largest number in the array. If the array is empty, return `null`.
@@ -71,7 +92,20 @@ function allNumbersAreNegative(values) {}
  * @param {number[]} values - An array of whole numbers.
  * @returns {number} - The largest number in the array.
  */
-function getLargestNumber(values) {}
+function getLargestNumber(values) {
+  let largest = values[0];
+
+  for (let i = 1; i < values.length; i++) {
+    if (largest < values[i]) {
+      largest = values[i];
+    }
+  }
+  if (values.length === 0) {
+    return null;
+  }
+
+  return largest;
+}
 
 module.exports = {
   addAllNumbers,

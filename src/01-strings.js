@@ -4,7 +4,15 @@
  * @param {string[]} words - An array of strings.
  * @returns {string} - A single string with all words combined together.
  */
-function combineAllWords(words) {}
+function combineAllWords(words) {
+  let unitedStr = '';
+
+  for (let i = 0; i < words.length; i++) {
+    unitedStr = words.join('');
+  }
+
+  return unitedStr;
+}
 
 /**
  * Return an array of the words but each word is repeated.
