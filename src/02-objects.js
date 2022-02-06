@@ -4,7 +4,16 @@
  * @param {Object[]} people - An array of people objects.
  * @returns {string[]} - An array of names.
  */
-function getAllNames(people) {}
+
+function getAllNames(people) {
+  let peopleNames = [];
+
+  for (let i = 0; i < people.length; i++) {
+    peopleNames.push(people[i].name);
+  }
+
+  return peopleNames;
+}
 
 /**
  * Given an array of people objects, return the single object with a name that matches the given name (case-insensitive). If no name matches, return `null`
@@ -13,7 +22,18 @@ function getAllNames(people) {}
  * @param {string} name - A single name.
  * @returns {Object|null} - A person object or `null`.
  */
-function findPersonByName(people, name) {}
+  
+function findPersonByName(people, name) {
+  let result = null;
+  
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].name.toLowerCase() === name || people[i].name.toUpperCase() === name || people[i].name === name) {
+      result = people[i];
+    }
+  
+  }
+  return result;
+}
 
 /**
  * Return an array of objects, where each object represents a person under the age of 25.
