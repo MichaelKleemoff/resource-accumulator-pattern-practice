@@ -57,7 +57,14 @@ function getSmallWords(words) {
  * @param {string} character - A single character.
  * @returns {string|null} - The found word or `null`.
  */
-function findWordWithCharacter(words, character) {}
+function findWordWithCharacter(words, character) {
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].includes(character)) {
+      return words[i];
+    }
+  }
+  return null; 
+}
 
 /**
  * Return `true` if all words are in all caps. Otherwise, return `false`.
@@ -65,7 +72,15 @@ function findWordWithCharacter(words, character) {}
  * @param {string[]} words - An array of strings.
  * @returns {boolean} - Whether or not all words are in all caps.
  */
-function allWordsAreAllCaps(words) {}
+function allWordsAreAllCaps(words) {
+  for (let i = 0; i < words.length; i++) {
+    if (words[i] !== words[i].toUpperCase()) {
+      return false;
+    }
+  }
+
+  return true;
+}
 
 /**
  * Return the first longest word.
@@ -73,7 +88,17 @@ function allWordsAreAllCaps(words) {}
  * @param {string[]} words - An array of strings.
  * @returns {string} - The first word that is the longest.
  */
-function getLongestWord(words) {}
+function getLongestWord(words) {
+  let longestWord = words[0];
+
+  for (let i = 1; i < words.length; i++) {
+      if (words[i].length > longestWord.length) {
+        longestWord = words[i];
+      }
+    }
+
+  return longestWord;
+}
 
 module.exports = {
   combineAllWords,
