@@ -18,9 +18,18 @@ function combineAllWords(words) {
  * Return an array of the words but each word is repeated.
  *
  * @param {string[]} words - An array of strings.
- * @returns {string[]} - An array of whole numbers.
+ * @returns {string[]} - An array of double strings.
  */
-function repeatAllWords(words) {}
+function repeatAllWords(words) {
+  let doubleStr = [];
+  
+  for (let i = 0; i < words.length; i++) {
+    doubleStr.push(words[i] + words[i]); 
+  }
+
+  return doubleStr;
+}
+
 
 /**
  * Return an array of only those words that have four characters or less.
@@ -28,7 +37,18 @@ function repeatAllWords(words) {}
  * @param {string[]} words - An array of strings.
  * @returns {string[]} - An array of only small words.
  */
-function getSmallWords(words) {}
+function getSmallWords(words) {
+  // let fourCharArr = [];
+
+  // for (let i = 0; i < words.length; i++) {
+  //   if (words[i].length <= 4) {
+  //     fourCharArr.push(words[i]);
+  //   }
+  // }
+  let fourCharArr = words.filter(word => word.length <= 4);
+  
+  return fourCharArr;
+}
 
 /**
  * Return the first word that includes the character. If no word is found, return `null`.
