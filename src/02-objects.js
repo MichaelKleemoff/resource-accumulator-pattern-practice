@@ -41,7 +41,17 @@ function findPersonByName(people, name) {
  * @param {Object[]} people - An array of people objects.
  * @returns {Object[]} - An array of people.
  */
-function getPeopleUnder25(people) {}
+function getPeopleUnder25(people) {
+  let youngAgeArr = [];
+
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].age < 25) {
+      youngAgeArr.push(people[i]);
+    }
+  }
+
+  return youngAgeArr;
+}
 
 /**
  * Return an array of objects, where each object represents a person with a `gmail.com` email address.
@@ -49,7 +59,18 @@ function getPeopleUnder25(people) {}
  * @param {Object[]} people - An array of people objects.
  * @returns {Object[]} - An array of people.
  */
-function getPeopleWithGmail(people) {}
+
+function getPeopleWithGmail(people) {
+  let gmailPeople = [];
+
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].email.includes('@gmail.com')) {
+      gmailPeople.push(people[i]);
+    }
+  }
+
+  return gmailPeople;
+} 
 
 module.exports = {
   getAllNames,
