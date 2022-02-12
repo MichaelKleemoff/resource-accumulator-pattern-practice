@@ -73,17 +73,20 @@ function findNumberByValue(values, val) {
  * @returns {boolean} - Whether or not all numbers in the array are negative.
  */
 function allNumbersAreNegative(values) {
-  
+  let result = false;
+
   for (let value of values) {
-    if (value < 0 || value === 0) {
-      return true;
-    } 
-    if (value > 0 || value === 0) {
-      return false;
+    if (value < 0) {
+      result = true;
     }
-    
-  } 
-  return false;
+    if (value > 0) {
+      result = false;
+    }
+    if (value === 0) {
+      
+    } 
+  }
+  return result;
 }
 
 /**
